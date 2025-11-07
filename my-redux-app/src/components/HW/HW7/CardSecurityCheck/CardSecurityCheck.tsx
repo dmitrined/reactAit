@@ -183,7 +183,7 @@ export default function CardSecurityCheck(): JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/blob/main/vite-project/src/components/HW/HW7/CardSecurityCheck/CardSecurityCheck.tsx"
+  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW7/CardSecurityCheck"
 >
   Посмотреть код этой страницы на GitHub
 </a>

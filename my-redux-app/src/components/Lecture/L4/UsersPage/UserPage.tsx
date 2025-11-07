@@ -30,27 +30,6 @@ export default function UserPage(): JSX.Element {
           <div>Zip-code: {user.address.zipcode}</div>
           <Link to="../userspage">К списку пользователей</Link>
 
-          {/* Кнопка для GitHub кода */}
-      <a
-  style={{
-    display: 'inline-block',
-    padding: '10px 20px',
-    textDecoration: 'none', 
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    cursor: 'pointer',
-    color: 'white',
-    backgroundColor: '#24292e', 
-    border: '2px solid #24292e',
-    borderRadius: '6px',
-    marginTop: '15px' 
-  }}
-  target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/blob/main/vite-project/src/components/Lecture/L4/UsersPage/UsersPage.tsx"
->
-  Посмотреть код этой страницы на GitHub
-</a>
         </div>
       )}
     </>

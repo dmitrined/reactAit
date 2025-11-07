@@ -43,7 +43,7 @@ export default function CityPage():JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/blob/main/vite-project/src/components/Consultation/Practice1/CityPage/CityPage.tsx"
+  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/Consultation/Practice1/CityPage"
 >
   Посмотреть код этой страницы на GitHub
 </a>

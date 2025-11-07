@@ -87,7 +87,7 @@ export default function SandwichRedux(): JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/tree/main/vite-project/my-redux-app/src/components/HW8/sandwichRedux"
+  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW8/sandwichRedux"
 >
   Посмотреть код этой страницы на GitHub
 </a>

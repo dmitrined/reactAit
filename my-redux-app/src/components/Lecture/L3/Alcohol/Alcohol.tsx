@@ -46,7 +46,7 @@ export default function Alcohol(): JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/blob/main/vite-project/src/components/Lecture/L3/Alcohol/Alcohol.tsx"
+  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/Lecture/L3/Alcohol"
 >
   Посмотреть код этой страницы на GitHub
 </a>

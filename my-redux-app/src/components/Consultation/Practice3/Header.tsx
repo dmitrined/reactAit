@@ -60,7 +60,7 @@ function Header({ onAccountClick }: HeaderProps) {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/tree/main/vite-project/src/components/Consultation/Practice3"
+  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/Consultation/Practice3"
 >
   Посмотреть код этой страницы на GitHub
 </a>

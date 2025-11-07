@@ -111,16 +111,22 @@
 
 }
 .githubLink{
-    font-weight: bold;
-    margin-right: 20px;
     text-transform: none;
     text-decoration: none;
-    color: var(--primary-text);
 }
 
 .githubLink :hover{
     background-color: var(--hover-bg);
 }
+
+.githubContainer{
+    margin-right: 20px;
+
+}
+
+
+
+
 /* ✅ НОВЫЙ КОНТЕЙНЕР ДЛЯ ВСЕХ НАВИГАЦИОННЫХ ССЫЛОК */
 .navItems {
     display: flex; /* По умолчанию: горизонтальный вид */
@@ -132,19 +138,12 @@
 
 /* Кнопка переключения темы */
 .themeToggle {
-    margin-left: 10px; /* Немного отступа от бургер-иконки или navItems */
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: var(--toggle-bg);
-    color: var(--footer-text); 
-    font-weight: bold;
-    transition: background-color 0.2s;
+    margin-left: 10px; 
 }
 
 .themeToggle:hover {
     filter: brightness(1.1);
+   
 }
 
 /* 🖥️ Медиазапрос для бургер-меню (мобильный вид) */

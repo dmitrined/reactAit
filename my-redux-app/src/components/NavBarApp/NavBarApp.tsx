@@ -5,6 +5,12 @@ import { Link, NavLink } from "react-router-dom";
 import type { ThemeType } from "./ThemeContext";
 import logoAit from "./img/AitLogo.png";
 import myFoto from "./img/myFoto.png";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
+import FileUploadIcon from "@mui/icons-material/FileUpload";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { Avatar } from "@mui/material";
 
 // ✅ Определение интерфейса для пропсов
 export interface NavProps {
@@ -60,17 +66,18 @@ export default function NavBarApp({
       <a target="_blank" href="https://edu.ait-tr.de/">
         <img src={logoAit} alt="logoAit" className={style.logo} />
       </a>
-
-      <a
-        target="_blank"
-        href="https://github.com/dmitrined/FrontEndReact/tree/main/vite-project/src"
-        className={`${style.githubLink} ${style.link}`}
-      >
-        GitHub
-      </a>
-
+     
+      <div className={style.githubContainer}>
+        <a
+          target="_blank"
+          href="https://github.com/dmitrined/reactAit"
+          className={`${style.githubLink} ${style.link}`}
+        >
+          <GitHubIcon />
+        </a>
+      </div>
       <NavLink to="home" className={style.link}>
-        <img className={style.myFoto} src={myFoto} alt="myFoto" />
+        <Avatar alt="myFoto" src={myFoto} />
       </NavLink>
 
       <div className={`${style.navItems} ${isOpen ? style.open : ""}`}>
@@ -83,7 +90,8 @@ export default function NavBarApp({
             role="button"
             tabIndex={0}
           >
-            Lecture {isLectureVisible ? "▲" : "▼"}
+            Lecture{" "}
+            {isLectureVisible ? <FileUploadIcon /> : <FileDownloadIcon />}
           </Link>
 
           {isLectureVisible && (
@@ -171,7 +179,6 @@ export default function NavBarApp({
                   CounterRedux
                 </NavLink>
               </li>
-
             </ul>
           )}
         </div>
@@ -185,12 +192,12 @@ export default function NavBarApp({
             role="button"
             tabIndex={0}
           >
-            HomeWork {isHomeworkVisible ? "▲" : "▼"}
+            HomeWork{" "}
+            {isHomeworkVisible ? <FileUploadIcon /> : <FileDownloadIcon />}
           </Link>
 
           {isHomeworkVisible && (
             <ul className={style.list} key={"homework"}>
-              {/* ✅ Добавлено onClick={handleLinkClick} */}
               <li className={style.listElement}>
                 <NavLink
                   to="homework02"
@@ -247,8 +254,8 @@ export default function NavBarApp({
                   ToDoList
                 </NavLink>
               </li>
-              
-             <li className={style.listElement}>
+
+              <li className={style.listElement}>
                 <NavLink
                   to="sandwichRedux"
                   className={style.link}
@@ -267,7 +274,6 @@ export default function NavBarApp({
                   ToDoRedux
                 </NavLink>
               </li>
-
             </ul>
           )}
         </div>
@@ -281,12 +287,12 @@ export default function NavBarApp({
             role="button"
             tabIndex={0}
           >
-            Consultation {isConsultationVisible ? "▲" : "▼"}
+            Consultation{" "}
+            {isConsultationVisible ? <FileUploadIcon /> : <FileDownloadIcon />}
           </Link>
 
           {isConsultationVisible && (
             <ul className={style.list} key={"consultation"}>
-              {/* ✅ Добавлено onClick={handleLinkClick} */}
               <li className={style.listElement}>
                 <NavLink
                   to="citiPage"
@@ -318,10 +324,10 @@ export default function NavBarApp({
           )}
         </div>
       </div>
-  
+
       {/* ✅ КНОПКА-ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ */}
       <button onClick={toggleTheme} className={style.themeToggle}>
-        {theme === "light" ? "🌙" : "🌞"}
+        {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
       </button>
 
       {/* ✅ БУРГЕР-ИКОНКА: Переключает состояние 'isOpen' */}

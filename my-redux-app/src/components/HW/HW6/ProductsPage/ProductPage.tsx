@@ -55,27 +55,6 @@ export default function ProductPage(): JSX.Element {
           </Link>
         </div>
       )}
-      {/* Кнопка для GitHub кода */}
-      <a
-  style={{
-    display: 'inline-block',
-    padding: '10px 20px',
-    textDecoration: 'none', 
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: '16px',
-    cursor: 'pointer',
-    color: 'white',
-    backgroundColor: '#24292e', 
-    border: '2px solid #24292e',
-    borderRadius: '6px',
-    marginTop: '15px' 
-  }}
-  target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/blob/main/vite-project/src/components/HW/HW6/ProductsPage/ProductPage.tsx"
->
-  Посмотреть код этой страницы на GitHub
-</a>
     </div>
   );
 }

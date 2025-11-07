@@ -86,7 +86,7 @@ export default function Feedback(): JSX.Element {
     marginTop: '15px' 
   }}
   target="_blank"
-  href="https://github.com/dmitrined/FrontEndReact/blob/main/vite-project/src/components/HW/HW3/Feedback/Feedback.tsx"
+  href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW3/Feedback"
 >
   Посмотреть код этой страницы на GitHub
 </a>
