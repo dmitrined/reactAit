@@ -23,8 +23,9 @@ import CardSecurityCheck from "../HW/HW7/CardSecurityCheck/CardSecurityCheck";
 import ProductsPage from "../HW/HW6/ProductsPage/ProductsPage";
 import ProductPage from "../HW/HW6/ProductsPage/ProductPage";
 import TodoList from "../HW/HW7/TodoList/TodoList"; // Corrected import path
-import SandwichRedux from "../HW8/sandwichRedux/SandwichRedux";
-import CounterRedux from "../counter/CounterRedux";
+import SandwichRedux from "../HW/HW8/sandwichRedux/SandwichRedux";
+import CounterRedux from "../Lecture/L8/counter/CounterRedux";
+import ToDoRedux from "../HW/HW9/tasks/ToDoRedux";
 
 // 🛑 ЛОГИКА ДЛЯ ПРОПСА Header: Функция-заглушка для обработки клика
 const handleAccountClick = () => {
@@ -64,6 +65,8 @@ export default function AppApp(): JSX.Element {
         <Route path="cardSecurityCheck" element={<CardSecurityCheck />} />
         <Route path="toDoList" element={<TodoList />} />
         <Route path="sandwichRedux" element={<SandwichRedux />} />
+        <Route path="toDoRedux" element={<ToDoRedux />} />
+
 
 
 

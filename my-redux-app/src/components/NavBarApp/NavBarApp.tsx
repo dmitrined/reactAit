@@ -258,6 +258,16 @@ export default function NavBarApp({
                 </NavLink>
               </li>
 
+              <li className={style.listElement}>
+                <NavLink
+                  to="toDoRedux"
+                  className={style.link}
+                  onClick={handleLinkClick}
+                >
+                  ToDoRedux
+                </NavLink>
+              </li>
+
             </ul>
           )}
         </div>
