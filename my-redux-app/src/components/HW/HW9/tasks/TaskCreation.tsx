@@ -1,6 +1,8 @@
 // Импортируем хуки и типы из React, а также хук для работы с Redux
 import { useState, type FormEvent, type JSX } from "react";
 import { useDispatch } from "react-redux";
+import styles from "./ToDoRedux.module.css";
+
 
 // Определяем функциональный компонент TaskCreation, возвращающий JSX-элемент
 export default function TaskCreation(): JSX.Element {
@@ -30,10 +32,10 @@ export default function TaskCreation(): JSX.Element {
 
     // Возвращаем разметку (JSX) компонента
     return (
-        <div>
+        <div className={styles.creationSection}>
             <h1>Форма создания задачи</h1>
             {/* 8. Форма, при отправке которой вызывается функция handleSubmit */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form}>
                 <input
                     type="text"
                     placeholder="title"
@@ -41,6 +43,7 @@ export default function TaskCreation(): JSX.Element {
                     value={title}
                     // 10. Обновляем состояние title при каждом изменении поля ввода
                     onChange={(e) => setTitle(e.target.value)}
+                    required
                 />
                 <input type="text"
                     placeholder="description"
@@ -52,6 +55,7 @@ export default function TaskCreation(): JSX.Element {
                 {/* 13. Кнопка для отправки формы */}
                 <button type="submit">Создать</button>
             </form>
+
         </div>
     )
 }

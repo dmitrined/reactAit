@@ -2,14 +2,7 @@ import { uid } from 'uid'; // uid - генерирует уникальные и
 import type { TasksState } from './types/TasksState';
 import type { Action } from './types/Action';
 
-const initialState: TasksState = [
-    {
-        id: uid(),
-        title: 'Изучить React',
-        description: 'Изучить Redux, React, Typescript',
-        isDone: false
-    }
-];
+const initialState: TasksState = [];
 export default function tasksReducer(
     state: TasksState = initialState,
     action: Action
