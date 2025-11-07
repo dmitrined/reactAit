@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../../store"; // Путь к вашему Store
+import type { RootState } from "../../../../store"; // Путь к вашему Store
 import styles from "./SandwichRedux.module.css";
 
 export default function SandwichRedux(): JSX.Element {

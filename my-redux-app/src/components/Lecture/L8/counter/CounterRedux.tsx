@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../store";
+import type { RootState } from "../../../../store";
 import styles from "./CounterRedux.module.css";
 
 export default function CounterRedux(): JSX.Element {
