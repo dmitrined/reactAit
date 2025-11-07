@@ -2,6 +2,7 @@
 import { useState, type FormEvent, type JSX } from "react";
 import { useDispatch } from "react-redux";
 import styles from "./ToDoRedux.module.css";
+import AddIcon from '@mui/icons-material/Add';
 
 
 // Определяем функциональный компонент TaskCreation, возвращающий JSX-элемент
@@ -33,7 +34,7 @@ export default function TaskCreation(): JSX.Element {
     // Возвращаем разметку (JSX) компонента
     return (
         <div className={styles.creationSection}>
-            <h1>Форма создания задачи</h1>
+            <h1>Add a task</h1>
             {/* 8. Форма, при отправке которой вызывается функция handleSubmit */}
             <form onSubmit={handleSubmit} className={styles.form}>
                 <input
@@ -53,9 +54,9 @@ export default function TaskCreation(): JSX.Element {
                     onChange={(e) => setDescription(e.target.value)}
                 />
                 {/* 13. Кнопка для отправки формы */}
-                <button type="submit">Создать</button>
+                <button type="submit"><AddIcon/></button>
             </form>
 
         </div>
-    )
+    ) 
 }
