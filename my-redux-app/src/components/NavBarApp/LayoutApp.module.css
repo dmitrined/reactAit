@@ -1,0 +1,352 @@
+/* ======================================================================== */
+/* 🎨 ПЕРЕМЕННЫЕ И ТЕМЫ                                                      */
+/* ======================================================================== */
+
+/* Глобальные переменные, которые могут быть переопределены темами */
+:root {
+    /* Основные цвета */
+    --primary-bg: #f5f5f5; /* Значение по умолчанию (светлая тема) */
+    --primary-text: #333333; /* Значение по умолчанию (светлая тема) */
+    --border-color: #e0e0e0;
+    --hover-bg: rgba(0, 0, 0, 0.05);
+    --active-bg: #e0f7fa; /* Цвет активного элемента в списке */
+
+    /* Навигация */
+    --nav-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* Подвал */
+    --footer-bg: #eeeeee;
+    --footer-text: #666666;
+    --footer-border: #cccccc;
+    
+    /* Кнопка переключения темы */
+    --toggle-bg: #666666;
+}
+
+/* 🌙 ТЕМНАЯ ТЕМА */
+.layoutContainer[data-theme='dark'] {
+    --primary-bg: #121212; 
+    --primary-text: #f0f0f0;
+    --border-color: #333333;
+    --hover-bg: rgba(255, 255, 255, 0.1);
+    --active-bg: #004d40; /* Темный цвет активного элемента */
+    
+    --nav-bg: #1e1e1e;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+
+    --footer-bg: #1e1e1e;
+    --footer-text: #aaaaaa;
+    --footer-border: #333333;
+    
+    --toggle-bg: #aaaaaa;
+}
+
+/* ======================================================================== */
+/* 📦 ОСНОВНОЙ МАКЕТ (LAYOUT)                                               */
+/* ======================================================================== */
+
+.layoutContainer {
+    /* Контейнер должен быть flex, чтобы подвал прижимался вниз */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    transition: background-color 0.3s;
+}
+
+.mainContent {
+    /* Отступ, чтобы контент не скрывался под фиксированной шапкой */
+    padding-top: 65px; 
+    flex-grow: 1; /* Позволяет контенту занимать все доступное место */
+    padding-bottom: 20px; 
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* 🖥️ Медиазапрос для адаптации отступа mainContent */
+@media (min-width: 600px) {
+    .mainContent {
+        padding-top: 75px; 
+    }
+    .contentWrapper { /* Добавлен класс, который был упомянут, но не определен */
+        padding-top: 65px;
+    }
+}
+
+/* ======================================================================== */
+/* 🧭 НАВИГАЦИЯ (HEADER)                                                   */
+/* ======================================================================== */
+
+.navigation {
+    /* ИЗМЕНЕНО: Используем space-between для распределения элементов */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    height: 55px; 
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    background-color: var(--nav-bg); 
+    color: var(--primary-text);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+.myFoto {
+    width: 50px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+
+}
+.githubLink{
+    font-weight: bold;
+    margin-right: 20px;
+    text-transform: none;
+    text-decoration: none;
+    color: var(--primary-text);
+}
+
+.githubLink :hover{
+    background-color: var(--hover-bg);
+}
+/* ✅ НОВЫЙ КОНТЕЙНЕР ДЛЯ ВСЕХ НАВИГАЦИОННЫХ ССЫЛОК */
+.navItems {
+    display: flex; /* По умолчанию: горизонтальный вид */
+    align-items: center;
+    /* На больших экранах занимает центральное место */
+    margin-right: auto; 
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Кнопка переключения темы */
+.themeToggle {
+    margin-left: 10px; /* Немного отступа от бургер-иконки или navItems */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--toggle-bg);
+    color: var(--footer-text); 
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.themeToggle:hover {
+    filter: brightness(1.1);
+}
+
+/* 🖥️ Медиазапрос для бургер-меню (мобильный вид) */
+@media (max-width: 900px) {
+    .navigation {
+        justify-content: space-between; /* Логотип слева, Toggle/Бургер справа */
+    }
+
+    /* Навигационные ссылки: скрываем и делаем вертикальным меню */
+    .navItems {
+        /* Переопределяем: full-screen sidebar */
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 55px; /* Под шапкой */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 55px);
+        background-color: var(--nav-bg);
+        padding: 20px 15px;
+        box-shadow: 0 4px 6px var(--shadow-color);
+        
+        /* Скрыто по умолчанию */
+        transform: translateX(-100%);
+        z-index: 999;
+        
+        /* Сброс margin, который был для больших экранов */
+        margin-right: 0; 
+    }
+
+    /* Состояние "открыто" */
+    .navItems.open {
+        transform: translateX(0);
+    }
+
+    /* Адаптация выпадающих списков внутри мобильного меню */
+    .dropdownContainer {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* Выпадающий список должен быть статическим в мобильном меню */
+    .list {
+        position: static; 
+        width: 100%;
+        max-height: none; 
+        margin-top: 5px;
+        box-shadow: none; /* Убираем лишнюю тень в мобильном меню */
+    }
+}
+
+
+/* 🖥️ Стилизация и адаптация бургер-иконки */
+.burgerIcon {
+    border: 1px solid var(--border-color);
+    color: var(--primary-text);
+    font-size: 22px;
+    padding: 3px 10px;
+    cursor: pointer;
+    display: none; /* Скрыто по умолчанию (на больших экранах) */
+    margin-left: 10px;
+}
+
+@media (max-width: 900px) { 
+    .burgerIcon {
+        display: block; /* Показываем на мобильных */
+    }
+}
+
+/* 🖥️ Медиазапрос для бургер-меню (мобильный вид) */
+@media (max-width: 900px) {
+    
+    .navigation {
+        font-size: 0.9em; 
+        height: 50px;     
+    }
+
+    /* 2. Уменьшаем размер логотипа и фото */
+    .logo {
+        width: 80px; 
+    }
+    .myFoto {
+        width: 40px; 
+    }
+    
+    /* 3. корректируем отступ основного контента */
+    .mainContent {
+        padding-top: 55px; 
+    }
+
+    /* 4. Корректируем отступ для мобильного меню */
+    .navItems {
+        top: 50px; 
+        height: calc(100vh - 50px);
+    }
+    
+    /* 5. Делаем кнопку темы более компактной */
+    .themeToggle {
+        padding: 6px 12px;
+    }
+    
+    /* 6. Делаем бургер более компактным */
+    .burgerIcon {
+        font-size: 20px;
+        padding: 2px 8px;
+    }
+    
+    
+}
+/* ======================================================================== */
+/* 🔽 ВЫПАДАЮЩЕЕ МЕНЮ (DROPDOWN)                                           */
+/* ======================================================================== */
+
+.dropdownContainer {
+    position: relative; 
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Кнопки-переключатели (Link/Button) */
+.lectureToggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--primary-text);
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.lectureToggle:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Выпадающие списки (ul) */
+.list {
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    width: 250px;
+    max-height: 400px;
+    overflow-y: auto; 
+    box-shadow: 0 4px 6px var(--shadow-color);
+    background-color: var(--nav-bg);
+    border: 1px solid var(--border-color);
+    z-index: 1010;
+    border-radius: 4px;
+}
+
+.listElement {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.listElement:last-child {
+    border-bottom: none;
+}
+
+.link {
+    display: block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: var(--primary-text);
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+.link:hover {
+    background-color: var(--hover-bg);
+}
+
+.link.active {
+    background-color: var(--active-bg); 
+    font-weight: bold;
+}
+
+/* ======================================================================== */
+/* 🦶 ПОДВАЛ (FOOTER)                                                      */
+/* ======================================================================== */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-top: 1px solid var(--footer-border);
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    transition: background-color 0.3s;
+    font-size: 0.9em;
+    width: 100%; /* Гарантируем полную ширину */
+    box-sizing: border-box;
+    margin-top: auto; /* Помогает прижать подвал вниз, если mainContent не 100% высоты */
+}
+
+.copyright {
+    margin: 0;
+}
