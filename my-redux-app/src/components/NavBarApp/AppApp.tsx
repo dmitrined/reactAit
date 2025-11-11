@@ -26,6 +26,7 @@ import TodoList from "../HW/HW7/TodoList/TodoList"; // Corrected import path
 import SandwichRedux from "../HW/HW8/sandwichRedux/SandwichRedux";
 import CounterRedux from "../Lecture/L8/counter/CounterRedux";
 import ToDoRedux from "../HW/HW9/tasks/ToDoRedux";
+import DishApp from "../Consultation/Practice4/dishes/DishApp";
 
 // 🛑 ЛОГИКА ДЛЯ ПРОПСА Header: Функция-заглушка для обработки клика
 const handleAccountClick = () => {
@@ -79,6 +80,8 @@ export default function AppApp(): JSX.Element {
           path="header"
           element={<Header onAccountClick={handleAccountClick} />}
         />
+        <Route path="dishes" element={<DishApp />} />
+
       </Route>
     </Routes>
   );

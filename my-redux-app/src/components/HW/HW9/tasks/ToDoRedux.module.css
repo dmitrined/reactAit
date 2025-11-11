@@ -120,6 +120,7 @@ h1 {
     border: 1px solid #444957;
     box-shadow: var(--task-item-shadow);
     transition: all 0.3s ease;
+     
 }
 
 .taskItem:hover {
@@ -130,6 +131,8 @@ h1 {
 
 
 .taskContent {
+     overflow-y: auto; 
+  box-sizing: border-box;
     flex-grow: 1; 
     flex-direction: column; 
 }

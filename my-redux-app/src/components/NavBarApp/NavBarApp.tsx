@@ -320,6 +320,16 @@ export default function NavBarApp({
                   Burger
                 </NavLink>
               </li>
+
+              <li className={style.listElement}>
+                <NavLink
+                  to="dishes"
+                  className={style.link}
+                  onClick={handleLinkClick}
+                >
+                  Dishes
+                </NavLink>
+              </li>
             </ul>
           )}
         </div>
