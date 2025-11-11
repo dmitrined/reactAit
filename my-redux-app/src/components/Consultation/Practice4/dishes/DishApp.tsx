@@ -1,11 +1,11 @@
 import type { JSX } from "react";
 import DishesList from "./DishesList";
-import DischForm from "./DischForm";
+import DishForm from "./DishForm";
 
 export default function DishApp(): JSX.Element {
   return (
     <div>
-      <DischForm />
+      <DishForm />
       <DishesList />
     </div>
   );
