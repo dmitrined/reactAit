@@ -22,7 +22,7 @@ export default function DishesList(): JSX.Element {
             <h3 className={style.heading}>{dish.title}</h3>
             <p className={style.category}> {dish.category}</p>
             <img className={style.image} src={dish.image} alt={dish.title} />
-            <p className={style.pice}>{dish.price} €</p>
+            <p className={style.price}>{dish.price} €</p>
             <div className={style.icons}>
               <ClearIcon onClick={() => handleDelete(dish.id)} />
               <DishEditForm dish={dish} />
