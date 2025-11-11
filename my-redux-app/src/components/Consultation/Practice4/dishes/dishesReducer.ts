@@ -17,11 +17,11 @@ export default function dishesReducer(
   action: Action
 ): Dish[] {
   switch (action.type) {
-    case "disches/create":
+    case "dishes/create":
       return [...state, { ...action.payload, id: uid() }];
-    case "disches/delete":
+    case "dishes/delete":
       return state.filter((dish) => dish.id !== action.payload);
-    case "disches/edit":
+    case "dishes/edit":
       return state.map((dish) =>
         dish.id === action.payload.id ? action.payload : dish
       );
