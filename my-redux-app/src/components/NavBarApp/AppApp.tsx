@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { Route, Routes } from "react-router-dom";
+import "./AppApp.css";
 
 // Импорт компонентов Lecture
 import Alcohol from "../Lecture/L3/Alcohol/Alcohol";
@@ -27,6 +28,7 @@ import SandwichRedux from "../HW/HW8/sandwichRedux/SandwichRedux";
 import CounterRedux from "../Lecture/L8/counter/CounterRedux";
 import ToDoRedux from "../HW/HW9/tasks/ToDoRedux";
 import DishApp from "../Consultation/Practice4/dishes/DishApp";
+import Example from "../HW/HW10/Example";
 
 // 🛑 ЛОГИКА ДЛЯ ПРОПСА Header: Функция-заглушка для обработки клика
 const handleAccountClick = () => {
@@ -36,6 +38,7 @@ const handleAccountClick = () => {
 
 export default function AppApp(): JSX.Element {
   return (
+    
     <Routes>
       {/* ВСЕ маршруты вложены в LayOutApp (NavBar + Outlet + Footer) */}
       <Route path="/" element={<LayOutApp />}>
@@ -67,6 +70,8 @@ export default function AppApp(): JSX.Element {
         <Route path="toDoList" element={<TodoList />} />
         <Route path="sandwichRedux" element={<SandwichRedux />} />
         <Route path="toDoRedux" element={<ToDoRedux />} />
+        <Route path="exampleTailwind" element={<Example />} />
+
 
 
 
