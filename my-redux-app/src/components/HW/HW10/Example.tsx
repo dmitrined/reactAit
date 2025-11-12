@@ -82,10 +82,31 @@ export default function Example() {
               Start a 14 day free trial
             </a>
           </p>
+          {/* Кнопка для GitHub кода */}
+      <a
+        style={{
+          display: "inline-block",
+          padding: "10px 20px",
+          textDecoration: "none",
+          textAlign: "center",
+          fontWeight: "bold",
+          fontSize: "16px",
+          cursor: "pointer",
+          color: "white",
+          backgroundColor: "#24292e",
+          border: "2px solid #24292e",
+          borderRadius: "6px",
+          marginTop: "15px",
+        }}
+        target="_blank"
+        href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/components/HW/HW10"
+      >
+        Посмотреть код этой страницы на GitHub
+      </a>
         </div>
+         
       </div>
 
-      
     </>
   )
 }
