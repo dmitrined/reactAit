@@ -1,5 +1,6 @@
-import type { RootState } from "../../../../store";
-import type Dish from "./types/Dish";
+import type { RootState } from '../../../../store';
+import type Dish from './types/Dish';
 
-const selectdishes = (state:RootState):Dish[]=>state.dishes;
-export default selectdishes;
+const selectDishes = (state: RootState): Dish[] => state.dishes;
+
+export default selectDishes;
