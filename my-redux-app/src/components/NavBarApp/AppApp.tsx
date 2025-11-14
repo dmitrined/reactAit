@@ -29,6 +29,7 @@ import CounterRedux from "../Lecture/L8/counter/CounterRedux";
 import ToDoRedux from "../HW/HW9/tasks/ToDoRedux";
 import DishApp from "../Consultation/Practice4/dishes/DishApp";
 import Example from "../HW/HW10/Example";
+import MoviesApp from "../Lecture/L11/Movies/MoviesApp";
 
 // 🛑 ЛОГИКА ДЛЯ ПРОПСА Header: Функция-заглушка для обработки клика
 const handleAccountClick = () => {
@@ -71,6 +72,8 @@ export default function AppApp(): JSX.Element {
         <Route path="sandwichRedux" element={<SandwichRedux />} />
         <Route path="toDoRedux" element={<ToDoRedux />} />
         <Route path="exampleTailwind" element={<Example />} />
+        <Route path="movies" element={<MoviesApp />} />
+
 
 
 

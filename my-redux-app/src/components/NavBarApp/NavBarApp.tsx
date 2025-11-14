@@ -284,6 +284,17 @@ export default function NavBarApp({
                   ExampleTailwind
                 </NavLink>
               </li>
+
+              <li className={style.listElement}>
+                <NavLink
+                  to="movies"
+                  className={style.link}
+                  onClick={handleLinkClick}
+                >
+                  Movies
+                </NavLink>
+              </li>
+              
             </ul>
           )}
         </div>

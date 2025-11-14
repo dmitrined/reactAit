@@ -4,3 +4,4 @@ export default interface DishDto {
   price: number;
   image: string;
 }
+

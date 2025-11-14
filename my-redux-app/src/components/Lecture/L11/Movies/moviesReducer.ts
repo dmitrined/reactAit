@@ -1,0 +1,61 @@
+import { uid } from "uid";
+import type { Action } from "../types/Action";
+import type Movie from "../types/Movie";
+
+const initialState: Movie[] = [
+  {
+    id: "uid()",
+    title: "Холоп",
+    genre: "Комедия",
+    country: "Россия",
+    releaseDate: "2019-12-26",
+    image:
+      "https://avatars.mds.yandex.net/i?id=756807521f475d9d5c7868bf13c8c1327d412841-8313048-images-thumbs&n=13",
+  },
+  {
+    id: "uid()",
+    title: "Легенда №17",
+    genre: "Спорт, Биография",
+    country: "Россия",
+    releaseDate: "2013-04-18",
+    image:
+      "https://avatars.mds.yandex.net/i?id=4da97023d542deb6ab1aa7e8d1751aa955e58245-5479895-images-thumbs&n=13",
+  },
+  {
+    id: "uid()",
+    title: "Брат",
+    genre: "Криминал, Драма",
+    country: "Россия",
+    releaseDate: "1997-05-12",
+    image:
+      "https://avatars.mds.yandex.net/i?id=dc40006099975b2662ac2df565d467bf14a0ffa4-5277860-images-thumbs&n=13",
+  },
+  {
+    id: "uid()",
+    title: "Движение вверх",
+    genre: "Спорт, Драма",
+    country: "Россия",
+    releaseDate: "2017-12-28",
+    image:
+      "https://avatars.mds.yandex.net/i?id=9122b336dd666838f065d2c32f2728bd_l-6871359-images-thumbs&n=13",
+  },
+];
+
+export default function moviesReducer(
+  state: Movie[] = initialState,
+  action: Action
+): Movie[] {
+  switch (action.type) {
+    case "movies/add":
+      return [...state, { ...action.payload, id: uid() }];
+    case "movies/delete":
+      return state.filter((movie) => movie.id !== action.payload);
+    case "movies/editTitle":
+      return state.map((movie) =>
+        movie.id === action.payload.id ? action.payload : movie
+      );
+
+    default:
+      return state;
+  }
+}

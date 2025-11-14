@@ -6,3 +6,5 @@ export type Action =
   | { type: 'dishes/create', payload: DishDto }
   | { type: 'dishes/delete', payload: DishId }
   | { type: 'dishes/edit', payload: Dish };
+
+  

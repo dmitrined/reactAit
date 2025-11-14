@@ -7,3 +7,4 @@ export default interface Dish {
 }
 
 export type DishId = Dish['id'];
+
