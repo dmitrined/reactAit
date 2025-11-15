@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 //import "./index.css";
-import { BrowserRouter } from "react-router-dom";
+import {  BrowserRouter } from "react-router-dom";
 import ThemeProvider from "./components/Lecture/L6/themeContext/ThemeProvider.tsx";
 import AppApp from "./components/NavBarApp/AppApp.tsx";
 
@@ -12,10 +12,10 @@ import { Provider } from "react-redux";
 import store from "./store.ts"; 
 
 createRoot(document.getElementById("root")!).render(
-  // 3. Оборачиваем все приложение в Provider, передавая store
+  // 3. Оборачиваем все приложение в Provider, передавая store. // basename="/reactAit"
   <Provider store={store}>
     <ThemeProvider>
-      <BrowserRouter basename="/reactAit">
+      <BrowserRouter basename="/reactAit" > 
         <AppApp />
       </BrowserRouter>
     </ThemeProvider>
