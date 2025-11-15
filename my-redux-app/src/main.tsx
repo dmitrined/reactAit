@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")!).render(
   // 3. Оборачиваем все приложение в Provider, передавая store. // basename="/reactAit"
   <Provider store={store}>
     <ThemeProvider>
-      <BrowserRouter  > 
+      <BrowserRouter basename="/reactAit" > 
         <AppApp />
       </BrowserRouter>
     </ThemeProvider>
