@@ -1,6 +1,5 @@
 import type { JSX } from "react";
 import styles from './CityPage.module.css'
-import Honda from './img/Troc.webp'
 
 export default function CityPage():JSX.Element {
   return (
@@ -22,7 +21,6 @@ export default function CityPage():JSX.Element {
                     когда их резиденция находилась в Людвигслюсте.</p>
       <img className={styles.imageClass} src="https://img.goodfon.ru/original/2160x1440/d/c3/schwerin-castle-germany-zamok.jpg" alt="" />
       <h1>Первый способ подгрузить изображение через импорт</h1>
-      <img src={Honda} alt="" />
       <h1>Второй способ из папки public, без точки перед слеш</h1>
       <img src="staria.webp" alt="staria" />
 
