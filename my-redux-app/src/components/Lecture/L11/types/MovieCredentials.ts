@@ -4,4 +4,5 @@ export default interface MovieCredentials {
   country: string;
   releaseDate: string;
   image: string;
+  play:string;
 }

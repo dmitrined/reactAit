@@ -7,6 +7,8 @@ export default function MovieCreation(): JSX.Element {
   const [country, setCountry] = useState<string>("");
   const [releaseDate, setReleaseDate] = useState<string>("");
   const [image, setImage] = useState<string>("");
+  const [play, setPlay] = useState<string>("");
+
   const [error, setError] = useState<string>("");
 
   function validateInputs(): boolean {
@@ -31,7 +33,12 @@ export default function MovieCreation(): JSX.Element {
     }
 
     if (image.trim() === "") {
-      setError("Картинка не должно быть пустым");
+      setError("Ссылка на картинку не должно быть пустым");
+      return false;
+    }
+    
+     if (play.trim() === "") {
+      setError("Ссылкана фильм не должно быть пустым");
       return false;
     }
     return true;
@@ -43,6 +50,7 @@ export default function MovieCreation(): JSX.Element {
     setCountry("");
     setReleaseDate("");
     setImage("");
+    setPlay("");
     setError("");
   }
 
@@ -59,6 +67,7 @@ export default function MovieCreation(): JSX.Element {
           country,
           releaseDate,
           image,
+          play,
         },
       });
       clearInputsAndError();
@@ -146,6 +155,20 @@ export default function MovieCreation(): JSX.Element {
             placeholder="URL изображения"
             value={image}
             onChange={(e) => setImage(e.target.value)}
+            className="p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition duration-300 shadow-sm"
+          />
+        </div>
+
+        <div className="flex flex-col">
+          <label htmlFor="play" className="mb-2 font-medium text-gray-700">
+            Ссылка на фильм
+          </label>
+          <input
+            id="play"
+            type="text"
+            placeholder="URL фильма"
+            value={play}
+            onChange={(e) => setPlay(e.target.value)}
             className="p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition duration-300 shadow-sm"
           />
         </div>

@@ -18,6 +18,8 @@ export default function MovieEdit(props: { movie: Movie }): JSX.Element {
   const [country, setCountry] = useState<string>(movie.country);
   const [releaseDate, setReleaseDate] = useState<string>(movie.releaseDate);
   const [image, setImage] = useState<string>(movie.image);
+  const [play, setPlay] = useState<string>(movie.play);
+
   const [error, setError] = useState<string>("");
 
   function validateInputs(): boolean {
@@ -42,7 +44,12 @@ export default function MovieEdit(props: { movie: Movie }): JSX.Element {
     }
 
     if (image.trim() === "") {
-      setError("Картинка не должно быть пустым");
+      setError("Ссылка на картинку не должно быть пустым");
+      return false;
+    }
+
+    if (play.trim() === "") {
+      setError("Ссылкана фильм не должно быть пустым");
       return false;
     }
 
@@ -55,6 +62,7 @@ export default function MovieEdit(props: { movie: Movie }): JSX.Element {
     setCountry(movie.country);
     setReleaseDate(movie.releaseDate);
     setImage(movie.image);
+    setPlay(movie.play);
     setError("");
   }
   const dispatch = useDispatch();
@@ -70,6 +78,7 @@ export default function MovieEdit(props: { movie: Movie }): JSX.Element {
           country,
           releaseDate,
           image,
+          play,
         },
       });
       setToggle(false);
@@ -136,6 +145,14 @@ export default function MovieEdit(props: { movie: Movie }): JSX.Element {
               placeholder="Картинка (URL)"
               value={image}
               onChange={(e) => setImage(e.target.value)}
+              className="p-1 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-0"
+            />
+
+            <input
+              type="text"
+              placeholder="Фильм (URL)"
+              value={play}
+              onChange={(e) => setPlay(e.target.value)}
               className="p-1 text-sm border border-gray-300 rounded-md focus:border-indigo-500 focus:ring-0"
             />
 

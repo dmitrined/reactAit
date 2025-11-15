@@ -2,9 +2,10 @@ import type { JSX } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectMovies } from "./selectors";
 import type { MovieId } from "../types/Movie";
-import ClearIcon from "@mui/icons-material/Clear";
 import MovieEdit from "./MovieEdit";
 import NoPhotographyIcon from "@mui/icons-material/NoPhotography";
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Movies(): JSX.Element {
   const movies = useSelector(selectMovies);
@@ -25,7 +26,7 @@ export default function Movies(): JSX.Element {
         {movies.map((movie) => (
           <li
             key={movie.id}
-            className="w-full max-w-lg bg-white rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300 group relative flex flex-col"
+            className="overflow-hidden w-full max-w-lg bg-white rounded-xl shadow-xl transform hover:scale-[1.02] transition-all duration-300 group relative flex flex-col"
           >
             <div className="h-64 overflow-hidden shrink-0">
               {movie.image && movie.image.startsWith("http") ? (
@@ -59,12 +60,25 @@ export default function Movies(): JSX.Element {
               </div>
             </div>
 
-            <div className="flex justify-end p-4 space-x-3 border-t border-gray-100 bg-gray-50/50 shrink-0">
-              <ClearIcon
-                onClick={() => handleDelete(movie.id)}
-                className="text-red-500 cursor-pointer hover:text-red-700 transition duration-150 transform hover:scale-110 text-3xl"
-              />
-              <MovieEdit movie={movie} />
+            <div className="flex justify-between p-4 border-t border-gray-100 bg-gray-50/50 shrink-0">
+            {movie.play && (
+                <a
+                  href={movie.play}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Смотреть фильм ${movie.title}`}
+                  className="text-green-500 cursor-pointer hover:text-green-700 transition duration-150 transform hover:scale-110 text-3xl"
+                >
+                  <PlayCircleOutlineIcon className="text-3xl" />
+                </a>
+              )}
+              <div className="flex space-x-3">
+                <DeleteIcon
+                  onClick={() => handleDelete(movie.id)}
+                  className="text-red-500 cursor-pointer hover:text-red-700 transition duration-150 transform hover:scale-110 text-3xl"
+                />
+                <MovieEdit movie={movie} />
+              </div>
             </div>
           </li>
         ))}
