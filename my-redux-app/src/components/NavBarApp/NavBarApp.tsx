@@ -294,6 +294,16 @@ export default function NavBarApp({
                   Movies
                 </NavLink>
               </li>
+
+               <li className={style.listElement}>
+                <NavLink
+                  to="pruductsToolkit"
+                  className={style.link}
+                  onClick={handleLinkClick}
+                >
+                  PruductsToolkit
+                </NavLink>
+              </li>
               
             </ul>
           )}

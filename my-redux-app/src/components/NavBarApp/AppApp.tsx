@@ -30,6 +30,7 @@ import ToDoRedux from "../HW/HW9/tasks/ToDoRedux";
 import DishApp from "../Consultation/Practice4/dishes/DishApp";
 import Example from "../HW/HW10/Example";
 import MoviesApp from "../Lecture/L11/Movies/MoviesApp";
+import { ProductsList } from "../../features/products/ProductsList";
 
 // 🛑 ЛОГИКА ДЛЯ ПРОПСА Header: Функция-заглушка для обработки клика
 const handleAccountClick = () => {
@@ -73,6 +74,8 @@ export default function AppApp(): JSX.Element {
         <Route path="toDoRedux" element={<ToDoRedux />} />
         <Route path="exampleTailwind" element={<Example />} />
         <Route path="movies" element={<MoviesApp />} />
+        <Route path="pruductsToolkit" element={<ProductsList />} />
+
 
 
 
