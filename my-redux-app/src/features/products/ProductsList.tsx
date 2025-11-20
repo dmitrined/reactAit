@@ -50,7 +50,7 @@ export const ProductsList = () => {
           hover:border-gray-700
         "
         target="_blank"
-        href="https://github.com/dmitrined/productsToolkit/tree/main/my-toolkit/src/features/products"
+        href="https://github.com/dmitrined/reactAit/tree/main/my-redux-app/src/features/products"
       >
         Посмотреть код этой страницы  <GitHubIcon/>
       </a>
